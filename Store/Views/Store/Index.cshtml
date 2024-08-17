@@ -1,0 +1,25 @@
+﻿@model List<Store.Models.DataStore>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2 style="text-align:center ; padding:5%">Best selling products</h2>
+
+<div class="d-flex flex-wrap justify-content-center">
+    @foreach (var item in Model)
+    {
+        <div class="text-center">
+
+        <div class="card m-2" style="width: 18rem;">
+            <img src="@item.ImgUrl" class="card-img-top" alt="...">
+            <div class="card-body">
+                    <h5 class="card-title" style="padding:9%">@item.Name</h5>
+                <p class="card-text" >Price <b>@item.Price $</b></p>
+                <p class="card-text"><del>Was</del>  <b>@item.PriceAfter $ </b></p>
+                <a href="#" class="btn btn-primary">Add to Card </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>
